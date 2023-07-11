@@ -9,7 +9,7 @@ def main():
     if num_args == 0:
         print("0 arguments.")
     else:
-        print(f'{num_args} arguments{"s" if num_args > 1 else ""}:')
+        print(f'{num_args} argument{"s" if num_args > 1 else ""}:')
         for i, arg in enumerate(args):
             print(f"{i+1}: {arg}")
 
