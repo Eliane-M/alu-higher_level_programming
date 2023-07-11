@@ -2,7 +2,8 @@
 import sys
 
 
-args = sys.argv[1:]
+def main():
+    args = sys.argv[1:]
     num_args = len(args)
 
     if num_args == 0:
