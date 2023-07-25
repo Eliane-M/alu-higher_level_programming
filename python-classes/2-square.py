@@ -1,11 +1,12 @@
 #!/usr/bin/python3
 """
-    Defining square again
+checks if the size of square is an integer and > than 0
 """
 
 
 class Square:
-    """class instances
+    """
+    class instances
     """
     def __init__(self, size=0):
         self.__size = size
