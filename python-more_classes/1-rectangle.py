@@ -5,6 +5,9 @@ real definition of rectangles
 
 
 class Rectangles:
+    """
+    now its documented
+    """
     def __init__(self, width=0, height=0):
         self.__width = width
         self.__height = height
