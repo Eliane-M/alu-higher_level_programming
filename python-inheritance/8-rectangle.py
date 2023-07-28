@@ -10,7 +10,7 @@ class BaseGeometry()
 """
 
 
-class Rectangle(Basegeometry):
+class Rectangle(BaseGeometry):
     """
     class
     """
