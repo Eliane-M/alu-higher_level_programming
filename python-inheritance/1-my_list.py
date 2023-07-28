@@ -4,7 +4,7 @@ inheritance
 """
 
 
-def print_sorted(self):
+class MyList:
     """
     class
     """
