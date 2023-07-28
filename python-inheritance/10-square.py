@@ -12,8 +12,8 @@ class Square(Rectangle):
     square classes
     """
     def __init__(self, size):
-        """The initialization method for
-        the class Square
+        """
+        initialization
         """
         self.__size = self.integer_validator("size", size)
 
