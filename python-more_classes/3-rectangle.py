@@ -54,4 +54,3 @@ class Rectangle:
 
     def __repr__(self):
         return "<3-rectangle.Rectangle object at {}>".format(hex(id(self)))
-
