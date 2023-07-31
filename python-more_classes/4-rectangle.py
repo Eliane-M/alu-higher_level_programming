@@ -47,10 +47,13 @@ class Rectangle:
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ""
+            
         rectangle_str = ""
         for _ in range(self.__height):
             rectangle_str += "#" * self.__width + "\n"
         return rectangle_str.rstrip()
 
     def __repr__(self):
-        return "<3-rectangle.Rectangle object at {}>".format(hex(id(self)))
+         rect = "Rectangle(" + str(self.__width)
+        rect += ", " + str(self.__height) + ")"
+        return (rect)
