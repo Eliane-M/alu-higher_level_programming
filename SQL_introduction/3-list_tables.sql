@@ -1,2 +1,2 @@
-/* script that lists all tables in mysql server */
+-- script that lists all tables in mysql server
 SHOW TABLES;
