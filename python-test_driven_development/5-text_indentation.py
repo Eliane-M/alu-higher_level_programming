@@ -11,17 +11,19 @@ def text_indentation(text):
     there should be no spaces at the beginning or the end of the line
     """
     if not isinstance(text, str):
-        raise TypeError('text must be a string')
-    separators = ['.', '?', ':']
-    lines = text.splitlines()
-    formatted_lines = []
+        raise TypeError("text must be a string")
 
-    for line in lines:
-        line = line.strip()
-        if any(sep in line for sep in separators):
-            formatted_lines.append(line)
-            formatted_lines.append("")
-        else:
-            formatted_lines.append(line)
+    c = 0
+    while c < len(text) and text[c] == ' ':
+        c += 1
 
-    print('\n'.join(formatted_lines))
+    while c < len(text):
+        print(text[c], end="")
+        if text[c] == "\n" or text[c] in ".?:":
+            if text[c] in ".?:":
+                print("\n")
+            c += 1
+            while c < len(text) and text[c] == ' ':
+                c += 1
+            continue
+        c += 1
