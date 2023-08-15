@@ -12,11 +12,12 @@ def matrix_divided(matrix, div):
     div can't be 0
     raise a zerodivisionerroe if div == 0
     """
-    if not isinstance(matrix, list) or \
-        not all(isinstance(row, list) for row in matrix) or \
-        not all(isinstance(element, int) or isinstance(element, float):
-            raise TypeError('matrix must be a matrix (list of lists) '
-                            'of integers/floats')
+    if (not isinstance(matrix, list) or matrix == [] or
+            not all(isinstance(row, list) for row in matrix) or
+            not all((isinstance(ele, int) or isinstance(ele, float))
+                    for ele in [num for row in matrix for num in row])):
+        raise TypeError("matrix must be a matrix (list of lists) of "
+                        "integers/floats")
 
     if any(len(row) != len(matrix[0]) for row in matrix):
         raise TypeError('Each row of the matrix must have the same size')
