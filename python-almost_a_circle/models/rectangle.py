@@ -2,7 +2,7 @@
 """
 class rectangle that inherits from base
 """
-from models.class import base
+from models.base import Base
 
 
 class Rectangle:
@@ -31,6 +31,7 @@ class Rectangle:
     @property
     def height(self):
         return self.height
+
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
@@ -42,6 +43,7 @@ class Rectangle:
     @property
     def x(self):
         return self.x
+
     @x.setter
     def x(self, value):
         if not isinstance(value, int):
@@ -53,6 +55,7 @@ class Rectangle:
     @property
     def y(self):
         return self.y
+
     @y.setter
     def y(self, value):
         if not isinstance(value, int):
