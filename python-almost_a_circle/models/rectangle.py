@@ -5,7 +5,7 @@ class rectangle that inherits from base
 from models.base import Base
 
 
-class Rectangle:
+class Rectangle(Base):
     """
     class attributes and methods
     """
@@ -23,9 +23,9 @@ class Rectangle:
     @width.setter
     def width(self, value):
         if not isinstance(value, int):
-            raise TypeError('Width must be an integer')
+            raise TypeError('width must be an integer')
         if value <= 0:
-            raise TypeError('Width very small')
+            raise ValueError('width must be > 0')
         self.__width = value
 
     @property
@@ -35,9 +35,9 @@ class Rectangle:
     @height.setter
     def height(self, value):
         if not isinstance(value, int):
-            raise TypeError('Height has to be integer')
+            raise TypeError('height must be integer')
         if value <= 0:
-            raise TypeError('Height value so small')
+            raise ValueError('height must be > 0')
         self.__height = value
 
     @property
@@ -49,7 +49,7 @@ class Rectangle:
         if not isinstance(value, int):
             raise TypeError('x must be an integer')
         if value < 0:
-            raise ValueError('x value too small')
+            raise ValueError('x must be >= 0')
         self.__x = value
 
     @property
@@ -59,6 +59,6 @@ class Rectangle:
     @y.setter
     def y(self, value):
         if not isinstance(value, int):
-            raise ValueError('y must be an integer')
+            raise TypeError('y must be an integer')
         if value < 0:
-            raise ValueError('y cannot be negative')
+            raise ValueError('y must be >= 0')
