@@ -3,14 +3,14 @@
 lists all states from the database hbtn_0e_0_usa
 """
 import sys
-import MYSQLdb
+import MySQLdb
 
 
 def list_states(username, password, db_name):
     """
     listing all states
     """
-    connection_object = MYSQLdb.connect(
+    connection_object = MySQLdb.connect(
             host="localhost",
             user=user,
             passwd=passwd,
