@@ -2,11 +2,11 @@
 """
 contains the class definition of a State and an instance Base = declarative_base():
 """
-import MySQLdb
-from sys import argv
-from model_state import Base, State
+
+
 from sqlalchemy import Column, Integer, String
 from sqlalchemy.ext.declarative import declarative_base
+
 
 Base = declarative_base()
 
