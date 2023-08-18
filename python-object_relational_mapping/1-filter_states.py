@@ -1,8 +1,10 @@
 #!/usr/bin/python3
 """
 lists all states starting with 'N'
+states are in database hbtn_0e_0_usa
+order in ascendin order
 """
-import sys
+from sys import argv
 import MySQLdb
 
 
