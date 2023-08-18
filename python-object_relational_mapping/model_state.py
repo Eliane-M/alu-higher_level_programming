@@ -17,13 +17,4 @@ class State(Base):
     """
     __tablename__ = 'states'
     id = Column(Integer, primary_key=True)
-    name =  Column(String(128))
-def list_states_starting_with_N(user, passwd, db):
-    '''List all states ordered by id in
-    ascending order that start with "N"'''
-    db = MySQLdb.connect(
-        host="localhost",
-        user=user,
-        passwd=passwd,
-        db=db,
-        port=3306)
+    name = Column(String(128))
