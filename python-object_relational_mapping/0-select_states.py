@@ -10,7 +10,7 @@ def list_states(username, password, db_name):
     """
     listing all states
     """
-    connection_object = MySQLdb.connect(
+    db = MySQLdb.connect(
             host="localhost",
             user=username,
             password=password,

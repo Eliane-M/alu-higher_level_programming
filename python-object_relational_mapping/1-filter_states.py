@@ -19,4 +19,24 @@ def list_starting_with_N(username, passwordd, db_name):
     cursor = db.cursor()
 
     query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY ASC 'id'"
+    cursor.execute(query)
 
+    states = cursor.fetchall()
+    for state in states:
+        print(state)
+
+    cursor.close()
+    connection.close()
+
+    except MySQLdb.Error as e:
+        print("Error:", e)
+
+
+if __name__ == "__main__":
+    if len(sys.argv) == 4:
+        username = sys.argv[1]
+        password = sys.argv[2]
+        db_name = sys.argv[3]
+        list_states_with_n(username, password, db_name)
+    else:
+        print("Usage: python script.py <username> <password> <db_name>")
