@@ -7,21 +7,10 @@ from sys import argv
 import MySQLdb
 
 
-def list_states_matching(user, passwd, db, state_name):
-    '''List all states ordered by id in
-    ascending order that match "state_name"'''
-    db = MySQLdb.connect(
-        host="localhost",
-        user=user,
-        passwd=passwd,
-        db=db,
-        port=3306)
-    cursor = db.cursor()
-    cursor.execute('SELECT * FROM states ORDER BY states.id ASC;')
-    for result in cursor.fetchall():
-        if result[1].startswith(state_name):
-            print(result)
-
-
-if __name__ == '__main__':
-    list_states_matching(argv[1], argv[2], argv[3], argv[4])
+if __name__ == "__main__":
+    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], db=sys.argv[3])
+    c = db.cursor()
+    c.execute("SELECT * \
+                 FROM `states` \
+                WHERE BINARY `name` = '{}'".format(sys.argv[4]))
+    [print(state) for state in c.fetchall()]
