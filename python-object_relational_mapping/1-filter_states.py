@@ -1,42 +1,38 @@
 #!/usr/bin/python3
-"""
-lists all states starting with 'N'
-states are in database hbtn_0e_0_usa
-order in ascendin order
-"""
+
+'''
+Write a script that lists all `states` with a `name` starting
+with `N` (upper N) from the database `hbtn_0e_0_usa`:
+
+    -Your script should take 3 arguments: `mysql username`, `mysql password`
+    and `database name` (no argument validation needed)
+    -You must use the module `MySQLdb (import MySQLdb)`
+    -Your script should connect to a MySQL server running
+    on `localhost` at port `3306`
+    -Results must be sorted in ascending order by `states.id`
+    -Your code should not be executed when imported
+'''
+
+
 from sys import argv
 import MySQLdb
 
 
-def list_starting_with_N(username, passwordd, db_name):
-    """
-    list states starting with n in ascending order by states_id
-    """
+def list_states_starting_with_N(user, passwd, db):
+    '''List all states ordered by id in
+    ascending order that start with "N"'''
     db = MySQLdb.connect(
-            host='localhost',
-            user=username,
-            passwd=password,
-            db=db_name,
-            port=3306)
+        host="localhost",
+        user=user,
+        passwd=passwd,
+        db=db,
+        port=3306)
     cursor = db.cursor()
-
-    query = "SELECT * FROM states WHERE name LIKE 'N%' ORDER BY ASC 'id'"
-    cursor.execute(query)
-
-    states = cursor.fetchall()
-    for state in states:
-        print(state)
-    cursor.close()
-    connection.close()
-    except MySQLdb.Error as e:
-        print("Error:", e)
+    cursor.execute('SELECT * FROM states ORDER BY states.id ASC;')
+    for result in cursor.fetchall():
+        if result[1].startswith('N'):
+            print(result)
 
 
-if __name__ == "__main__":
-    if len(sys.argv) == 4:
-        username = sys.argv[1]
-        password = sys.argv[2]
-        db_name = sys.argv[3]
-        list_states_with_n(username, password, db_name)
-    else:
-        print("Usage: python script.py <username> <password> <db_name>")
+if __name__ == '__main__':
+    list_states_starting_with_N(argv[1], argv[2], argv[3])
