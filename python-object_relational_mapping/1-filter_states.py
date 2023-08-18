@@ -26,10 +26,8 @@ def list_starting_with_N(username, passwordd, db_name):
     states = cursor.fetchall()
     for state in states:
         print(state)
-
     cursor.close()
     connection.close()
-
     except MySQLdb.Error as e:
         print("Error:", e)
 
