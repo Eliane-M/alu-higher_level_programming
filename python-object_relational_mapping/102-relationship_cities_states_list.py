@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-'''
+"""
 Write a script that lists all `City` objects from the
 database `hbtn_0e_101_usa`
 
@@ -18,7 +18,7 @@ database `hbtn_0e_101_usa`
 
 <city id>: <city name> -> <state name>
 
-'''
+"""
 
 
 from sys import argv
