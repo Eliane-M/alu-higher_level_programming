@@ -4,6 +4,11 @@ const arg = process.argv[2];
 if (arg === undefined) {
   console.log('Not a number');
 } else {
-  const intValue = parseInt(arg);
-  console.log('My number: ' + intValue);
+  	const intValue = parseInt(arg);
+	
+	if (!isNaN(intValue)) {
+  		console.log('My number: ' + intValue);
+	} else {
+		console.log('Not a number');
+	}
 }
