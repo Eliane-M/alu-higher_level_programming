@@ -1,5 +1,8 @@
 #!/usr/bin/node
 
-function add(a, b) {
-	return a + b;
+function add (a, b) {
+  return a + b;
 }
+
+const result = add(5, 3);
+console.log(result);
