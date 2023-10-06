@@ -6,8 +6,8 @@ const movieId = process.argv[2];
 const apiURL = 'https://swapi-api.alx-tools.com/api/films/${movieId}';
 
 if (!movieId) {
-	  console.error("provide URL");
-	  process.exit(1);
+  console.error('provide URL');
+  process.exit(1);
 }
 
 request(apiURL, (err, response, body) => {
