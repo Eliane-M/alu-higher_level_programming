@@ -17,6 +17,7 @@ request(URL, (err, response, body) => {
   filmData.results.forEach((film) => {
     if (film.characters.includes(URL + 'people/' + characterId)) {
       count++;
+      return;
     }
   });
   console.log(count);
