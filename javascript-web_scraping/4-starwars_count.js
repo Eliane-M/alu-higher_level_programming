@@ -18,7 +18,6 @@ request(URL, (err, response, body) => {
     film.characters.forEach((characterURL) => {
       if (characterURL.includes('people/' + characterId)) {
       count++;
-      return;
       }
     });
   });
