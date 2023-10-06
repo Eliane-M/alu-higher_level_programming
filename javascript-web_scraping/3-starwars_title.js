@@ -3,10 +3,10 @@
 const request = require('request');
 
 const movieId = process.argv[2];
-const apiURL = 'https://swapi-api.alx-tools.com/api/films/';
+const apiURL = 'https://swapi-api.alx-tools.com/api/films/${movieId}';
 
 if (!movieId) {
-	  console.error("Usage: node script.js <movie_id>");
+	  console.error("provide URL");
 	  process.exit(1);
 }
 
