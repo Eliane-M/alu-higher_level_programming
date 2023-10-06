@@ -15,10 +15,12 @@ request(URL, (err, response, body) => {
   let count = 0;
 
   filmData.results.forEach((film) => {
-    if (film.characters.includes(URL + 'people/' + characterId)) {
+    film.characters.forEach((characterURL) {
+      if (characterURL.includes('people/' + characterId)) {
       count++;
       return;
-    }
+      }
+    });
   });
   console.log(count);
 });
