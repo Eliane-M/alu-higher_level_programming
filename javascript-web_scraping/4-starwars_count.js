@@ -6,19 +6,18 @@ const URL = process.argv[2];
 
 const characterId = 18;
 request(URL, (err, response, body) => {
-	if (err) {
-		console.error(err);
-		return;
-	}
+  if (err) {
+    console.error(err);
+    return;
+  }
 
-	const filmData = JSON.parse(body);
-	let count = 0;
+  const filmData = JSON.parse(body);
+  let count = 0;
 
-	filmData.results.forEach((film) => {
-		if (film.characters.includes('URL + people/ + characterId')) {
-			count++;
-			return;
-		}
-	});
-	console.log(count);
+  filmData.results.forEach((film) => {
+    if (film.characters.includes(URL + 'people/' + characterId)) {
+      count++;
+    }
+  });
+  console.log(count);
 });
