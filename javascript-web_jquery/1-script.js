@@ -1,5 +1,5 @@
 <script>
 	$(document).ready(function () {
-	$("header").css("color", "red")
+		$("header").css("color", "red")
 	});
 </script>
