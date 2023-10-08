@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-require = request("require");
+const require = request("require");
 const args = process.argv;
 
 request(`https://swapi-api.hbtn.io/api/films/${args[2]}`, function (error, response, body) {
